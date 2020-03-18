@@ -39,7 +39,6 @@ public class TeamsService {
 
         team.getMembers().forEach(person -> {
             if (person.isTeam()) {
-                // do I need this here. I guess it prevents an extra loop through the starting team if it is referenced in another team members list
                 people.add(person);
                 people.addAll(recursiveTeamSearch(team, person.getMembers(), people));
             } else {
